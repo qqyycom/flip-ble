@@ -5,8 +5,10 @@ import android.annotation.TargetApi;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.os.Build;
-import android.support.annotation.WorkerThread;
+
 import android.text.TextUtils;
+
+import androidx.annotation.WorkerThread;
 
 import java.util.ArrayList;
 import java.util.List;

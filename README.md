@@ -1,3 +1,21 @@
+自编译，修复bug并支持AndroidX
+
+bug：notify获取多包的时候，包不对重复
+
+
+
+源库地址
+https://github.com/bingerz/flip-ble
+
+
+
+
+
+
+
+下面是源库介绍
+
+
 # FlipBLE
 [![Maven Central](https://img.shields.io/maven-central/v/cn.bingerz.android/flipble.svg)](https://search.maven.org/artifact/cn.bingerz.android/flipble)
 [![Download](https://api.bintray.com/packages/bingerz/maven/flip-ble/images/download.svg)](https://bintray.com/bingerz/maven/flip-ble)

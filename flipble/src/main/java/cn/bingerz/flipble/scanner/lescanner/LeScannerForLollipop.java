@@ -10,8 +10,10 @@ import android.bluetooth.le.ScanResult;
 import android.bluetooth.le.ScanSettings;
 import android.os.Build;
 import android.os.ParcelUuid;
-import android.support.annotation.WorkerThread;
+
 import android.text.TextUtils;
+
+import androidx.annotation.WorkerThread;
 
 import java.util.ArrayList;
 import java.util.List;

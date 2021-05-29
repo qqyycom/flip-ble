@@ -1079,11 +1079,17 @@ public class Peripheral {
             printCharacteristic("GattCallback：onCharacteristicChanged", characteristic, "null");
 
             final NotifyCallback notifyCallback = findNotifyCallback(characteristic.getUuid().toString());
+
+            final byte[] data=characteristic.getValue();
+//            if (notifyCallback != null) {
+//               notifyCallback.onCharacteristicChanged(characteristic.getValue());
+//            }
+
             getMainHandler().post(new Runnable() {
                 @Override
                 public void run() {
                     if (notifyCallback != null) {
-                        notifyCallback.onCharacteristicChanged(characteristic.getValue());
+                        notifyCallback.onCharacteristicChanged(data);
                     }
                 }
             });
@@ -1093,7 +1099,7 @@ public class Peripheral {
                 @Override
                 public void run() {
                     if (indicateCallback != null) {
-                        indicateCallback.onCharacteristicChanged(characteristic.getValue());
+                        indicateCallback.onCharacteristicChanged(data);
                     }
                 }
             });
@@ -1121,11 +1127,12 @@ public class Peripheral {
             if (readCallback != null) {
                 resetBusyState();
                 readCallback.getPeripheralConnector().readMsgInit();
+                final byte[] data=characteristic.getValue();
                 getMainHandler().post(new Runnable() {
                     @Override
                     public void run() {
                         if (status == BluetoothGatt.GATT_SUCCESS) {
-                            readCallback.onReadSuccess(characteristic.getValue());
+                            readCallback.onReadSuccess(data);
                         } else {
                             readCallback.onReadFailure(new GattException(status));
                         }

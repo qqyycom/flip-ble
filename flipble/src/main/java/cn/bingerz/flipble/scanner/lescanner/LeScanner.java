@@ -6,8 +6,10 @@ import android.bluetooth.BluetoothAdapter;
 import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.support.annotation.MainThread;
-import android.support.annotation.WorkerThread;
+
+
+import androidx.annotation.MainThread;
+import androidx.annotation.WorkerThread;
 
 import cn.bingerz.flipble.scanner.ScanRuleConfig;
 import cn.bingerz.flipble.utils.EasyLog;
