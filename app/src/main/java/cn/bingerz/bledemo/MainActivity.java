@@ -12,15 +12,7 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.annotation.VisibleForTesting;
-import android.support.test.espresso.IdlingResource;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -35,13 +27,20 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.bingerz.bledemo.adapter.ScanDeviceAdapter;
 import cn.bingerz.bledemo.comm.ObserverManager;
 import cn.bingerz.bledemo.operation.OperationActivity;
-import cn.bingerz.bledemo.util.EspressoIdlingResource;
 import cn.bingerz.flipble.central.CentralManager;
 import cn.bingerz.flipble.scanner.ScanDevice;
 import cn.bingerz.flipble.scanner.ScanFilterConfig;
@@ -152,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onConnect(ScanDevice device) {
                 if (!CentralManager.getInstance().isConnected(device.getAddress())) {
-                    EspressoIdlingResource.increment();
+//                    EspressoIdlingResource.increment();
                     stopScan();
                     Peripheral peripheral = new Peripheral(device);
                     connect(peripheral);
@@ -294,7 +293,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         public void onConnectFail(BLEException exception) {
-            EspressoIdlingResource.decrement();
+//            EspressoIdlingResource.decrement();
             ivLoading.clearAnimation();
             ivLoading.setVisibility(View.INVISIBLE);
             btnScan.setText(getString(R.string.start_scan));
@@ -305,7 +304,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         public void onConnectSuccess(Peripheral peripheral, int status) {
-            EspressoIdlingResource.decrement();
+//            EspressoIdlingResource.decrement();
             progressDialog.dismiss();
             mPeripheral = peripheral;
             mScanDeviceAdapter.addDevice(mPeripheral.getDevice());
@@ -455,8 +454,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    @VisibleForTesting
-    public IdlingResource getCountingIdlingResource() {
-        return EspressoIdlingResource.getIdlingResource();
-    }
+//    @VisibleForTesting
+//    public IdlingResource getCountingIdlingResource() {
+//        return EspressoIdlingResource.getIdlingResource();
+//    }
 }

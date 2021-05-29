@@ -22,26 +22,30 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "com.android.support:appcompat-v7:$versions.support"
-    implementation "com.android.support:recyclerview-v7:$versions.support"
-    implementation "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
-    implementation "com.android.support.test.espresso:espresso-idling-resource:$versions.espresso"
+//    implementation "com.android.support:appcompat-v7:$versions.support"
 
-    // Dependencies for local unit tests
-    testImplementation "junit:junit:$versions.junit"
-    testImplementation "org.mockito:mockito-core:$versions.mockito"
-    testImplementation "org.hamcrest:hamcrest-all:$versions.hamcrest"
-    testImplementation "org.powermock:powermock-module-junit4:$versions.powerMockito"
-    testImplementation "org.powermock:powermock-api-mockito:$versions.powerMockito"
+    api "androidx.appcompat:appcompat:1.2.0"
+    api "androidx.constraintlayout:constraintlayout:2.0.4"
+//    implementation "com.android.support:recyclerview-v7:$versions.support"
+//    implementation "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
+//    implementation "com.android.support.test.espresso:espresso-idling-resource:$versions.espresso"
 
-    // Android Testing Support Library's runner and rules
-    androidTestImplementation "com.android.support.test:runner:$versions.runner"
-    androidTestImplementation "com.android.support.test:rules:$versions.rules"
-
-    // Espresso UI Testing dependencies.
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:$versions.espresso"
-    androidTestImplementation "com.android.support.test.espresso:espresso-contrib:$versions.espresso"
-    androidTestImplementation "com.android.support.test.espresso:espresso-intents:$versions.espresso"
+//    // Dependencies for local unit tests
+//    testImplementation "junit:junit:$versions.junit"
+//    testImplementation "org.mockito:mockito-core:$versions.mockito"
+//    testImplementation "org.hamcrest:hamcrest-all:$versions.hamcrest"
+//    testImplementation "org.powermock:powermock-module-junit4:$versions.powerMockito"
+//    testImplementation "org.powermock:powermock-api-mockito:$versions.powerMockito"
+//
+//    // Android Testing Support Library's runner and rules
+//    androidTestImplementation "com.android.support.test:runner:$versions.runner"
+//    androidTestImplementation "com.android.support.test:rules:$versions.rules"
+//
+//    // Espresso UI Testing dependencies.
+//    androidTestImplementation "com.android.support.test.espresso:espresso-core:$versions.espresso"
+//    androidTestImplementation "com.android.support.test.espresso:espresso-contrib:$versions.espresso"
+//    androidTestImplementation "com.android.support.test.espresso:espresso-intents:$versions.espresso"
 
     implementation project(':flipble')
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }

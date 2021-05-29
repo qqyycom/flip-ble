@@ -11,7 +11,7 @@ buildscript {
         //Gradle Bintray Plugin
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
         //Gradle Android Maven plugin
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+//        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -30,7 +30,7 @@ task clean(type: Delete) {
 }
 
 def build_versions = [:]
-build_versions.min_sdk = 14
+build_versions.min_sdk = 21
 build_versions.target_sdk = 28
 build_versions.build_tools = "29.0.3"
 ext.build_versions = build_versions
