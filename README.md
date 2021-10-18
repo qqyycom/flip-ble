@@ -1,4 +1,6 @@
-自编译，修复bug并支持AndroidX
+自编译，修复bug并支持Android 12
+
+Android 12 不需要获取位置权限
 
 bug：notify获取多包的时候，包不对重复
 

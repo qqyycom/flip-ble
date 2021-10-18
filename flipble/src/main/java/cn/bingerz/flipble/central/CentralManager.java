@@ -92,7 +92,7 @@ public class CentralManager {
 
     public void startScan(boolean isCycled, ScanRuleConfig config, ScanCallback callback) {
         stopScan();
-        if (android.os.Build.VERSION.SDK_INT < 23 || checkLocationPermission()) {
+        if (android.os.Build.VERSION.SDK_INT < 23 || checkLocationPermission() || android.os.Build.VERSION.SDK_INT == 31) {
             mScanner = Scanner.createScanner(isCycled);
             mScanner.initConfig(config);
             mScanner.startScanner(callback);
